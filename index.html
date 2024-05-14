@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <style>
-    .centered-text{
-      text-align:center;
+    .centered-text {
+      text-align: center;
     }
-    .bolded{
-      font-weight:bold;
+
+    .bolded {
+      font-weight: bold;
     }
   </style>
 </head>
+
 <body class="centered-text" style="background-color:#4A412A; color:#7A9703">
   <h1>Finals Calculator</h1>
-    <p>Calculate your final mark.</p>
-      <font size="4">
-          <form onsubmit="calculateFinalPercent()">
-            <label for="currentMark">Enter your current mark:</label><br>
-            <input type="number" id="currentMark" name="currentMark" style="background-color:#D6C101; color:#306D85"><br><br>
-            <label for="currentWeight">Enter your current weight:</label><br>
-            <input type="number" id="currentWeight" name="currentWeight" style="background-color:#D6C101; color:#306D85""><br><br>
-            <label for="finalMark">Enter your final mark:</label><br>
-            <input type="number" id="finalMark" name="finalMark" style="background-color:#D6C101; color:#306D85"><br><br>
-            <label for="finalWeight">Enter your final weight:</label><br>
-            <input type="number" id="finalWeight" name="finalWeight" style="background-color:#D6C101; color:blue"><br><br>
-            <input type="submit" value="Calculate Percentage" style="background-color:#A442A0; color:#7A9703; font-size:20px" class="bolded"><br><br>
-          </form>
-          <output name="result" style="color:#C21A09"></output>
-      </font>
-      <script>
-        function calculateFinalPercent(){
-          event.preventDefault()
-          const currentMark = parseFloat(document.getElementById("currentMark").value);
-          const currentWeight = parseFloat(document.getElementById("currentWeight").value);
-          const finalMark = parseFloat(document.getElementById("finalMark").value);
-          const finalWeight = parseFloat(document.getElementById("finalWeight").value);
+  <p>Calculate your final mark.</p>
+  <font size="4">
+    <form onsubmit="calculateFinalPercent()">
+      <label for="currentMark">Enter your current mark:</label><br>
+      <input type="number" id="currentMark" name="currentMark" style="background-color:#D6C101; color:#306D85"><br><br>
+      <label for="currentWeight">Enter your current weight:</label><br>
+      <input type="number" id="currentWeight" name="currentWeight" style="background-color:#D6C101; color:#306D85""><br><br>
+            <label for=" finalMark">Enter your final mark:</label><br>
+      <input type="number" id="finalMark" name="finalMark" style="background-color:#D6C101; color:#306D85"><br><br>
+      <label for="finalWeight">Enter your final weight:</label><br>
+      <input type="number" id="finalWeight" name="finalWeight" style="background-color:#D6C101; color:blue"><br><br>
+      <input type="submit" value="Calculate Percentage" style="background-color:#A442A0; color:#306D85; font-size:20px"
+        class="bolded"><br><br>
+    </form>
+    <output name="result" style="color:#C21A09"></output>
+  </font>
+  <script>
+    function calculateFinalPercent() {
+      event.preventDefault()
+      const currentMark = parseFloat(document.getElementById("currentMark").value);
+      const currentWeight = parseFloat(document.getElementById("currentWeight").value);
+      const finalMark = parseFloat(document.getElementById("finalMark").value);
+      const finalWeight = parseFloat(document.getElementById("finalWeight").value);
 
-          const finalPercent = ((currentMark * currentWeight) + (finalMark * finalWeight)) / (currentWeight + finalWeight)
-          document.getElementsByName('result')[0].innerHTML = `Your final percentage is: ${finalPercent}%`;
-        }
-      </script>
+      const finalPercent = ((currentMark * currentWeight) + (finalMark * finalWeight)) / (currentWeight + finalWeight)
+      document.getElementsByName('result')[0].innerHTML = `Your final percentage is: ${finalPercent}%`;
+    }
+  </script>
 </body>
 <footer>
-  <div class="container">
-    <p>Ugliest website I've ever made. (lol)</p>
+  <img src="calculator.png" alt="From flaticon.com" style="width: 300px; height: 300px;"">
 </footer>
 </html>
